@@ -11,8 +11,7 @@ app.use(function (err, req, res, next) {
   res.status(500).send('Something broke!')
 })
 
-// app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json());
 
 /*app.post('/upload',(req,res)=>{
 	const imgUrl = req.body;
@@ -133,6 +132,11 @@ app.use(bodyParser.urlencoded({extended:true}))
 */
 
 app.post('/upload2',function(req,res){
+	console.log(req.body);
+	res.sendStatus(200);
+})
+
+app.get('/upload2',function(req,res){
 	console.log(req.body);
 	res.sendStatus(200);
 })
