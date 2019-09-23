@@ -13,7 +13,7 @@ app.use(function (err, req, res, next) {
 
 app.use(bodyParser.json());
 
-/*app.post('/upload',(req,res)=>{
+app.post('/upload',(req,res)=>{
 	const imgUrl = req.body;
 	let data = '';
 	req.on('data', function(chunk) { 
@@ -119,17 +119,19 @@ app.use(bodyParser.json());
 			return uploadSecond(buffer2)
 		})
 		.then(response=>{
-			console.log('uploaded');
+			const date = new Date();
+			console.log('uploaded '+date.toLocaleString('en-IN'));
 			res.send(response);
 		})
 		.catch(err=>{
-			console.log('Something went wrong');
+			const date = new Date();
+			console.log('Something went wrong '+date.toLocaleString('en-IN'));
 			res.status(500).send('Something went wrong');
 		})
 	});
 
 })
-*/
+
 
 app.post('/upload2',function(req,res){
 	console.log(req.body);
